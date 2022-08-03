@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem vindo ao blog do Marcos!</h1>
+  <p class="lead">Este é um projeto de um Blog. Desenvolvido com Node.js, Express e MongoDB</p>
+  <hr class="my-4">
+  <p>Um local onde você pode encontrar tudo que me dá na telha escrever ou o que acho interessante na Internet.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/usuarios/registro" role="button">Crie uma conta</a>
+  </p>
+</div>
+
+<hr>
+<h2>Postagens Recentes:</h2>
+
+{{#each postagens}}
+<div class="card mt-4">
+    <div class="card-body mt-4">
+        <h3>{{titulo}}</h3>
+        <h4>{{descricao}}</h4>
+        <a href="/postagem/{{slug}}">
+            <button class="btn btn-success">Leia Mais</button>
+        </a>
+        <hr>
+        <small>Categoria: {{categoria.nome}}</small>
+        <br>
+        <small>Data de Publicação: {{data}}</small>
+    </div>
+</div>
+{{else}}
+    <h5>Nenhuma Postagem</h5>
+{{/each}}
